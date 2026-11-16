@@ -1,0 +1,59 @@
+from datetime import date
+
+class EligibilityService:
+
+    def get_failure_reasons(self, candidate, job):
+        reasons = []
+
+        if candidate.profile_status.upper() != "ACTIVE":
+            reasons.append("Candidate profile is not ACTIVE")
+
+        if candidate.placement_status.upper() != "NOT_PLACED":
+            reasons.append("Candidate is already placed")
+
+        if job.status.upper() != "OPEN":
+            reasons.append("Job is not OPEN")
+
+        if job.company_status.upper() != "ACTIVE":
+            reasons.append("Company is not ACTIVE")
+
+        if job.application_deadline and date.today() > job.application_deadline:
+            reasons.append("Application deadline has passed")
+
+        if job.qualification_rule:
+            allowed_qualifications = {
+                qualification.strip().casefold()
+                for qualification in job.qualification_rule.replace("|", ",").replace(";", ",").split(",")
+                if qualification.strip()
+            }
+            if candidate.qualification.strip().casefold() not in allowed_qualifications:
+                reasons.append("Qualification does not meet the job requirement")
+
+        if job.min_percentage is not None and candidate.percentage < job.min_percentage:
+            reasons.append("Percentage below minimum requirement")
+
+        if job.min_passing_year and candidate.passing_year < job.min_passing_year:
+            reasons.append("Passing year is below allowed range")
+
+        if job.max_passing_year and candidate.passing_year > job.max_passing_year:
+            reasons.append("Passing year is above allowed range")
+
+        if candidate.backlog_count > job.max_backlogs:
+            reasons.append("Backlog count exceeds allowed limit")
+
+        candidate_skills = {
+            skill.strip().casefold()
+            for skill in candidate.skills + [candidate.primary_technology]
+            if skill.strip()
+        }
+        missing_skills = [
+            skill for skill in job.required_skills
+            if skill.strip().casefold() not in candidate_skills
+        ]
+        if missing_skills:
+            reasons.append("Missing required skills: " + ", ".join(missing_skills))
+
+        return reasons
+
+    def is_eligible(self, candidate, job):
+        return len(self.get_failure_reasons(candidate, job)) == 0

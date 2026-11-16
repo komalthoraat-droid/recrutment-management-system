@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in | Samarth Placements</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="brand" href="dashboard.html" aria-label="Kiran Placements home">
+        <span class="brand-mark">K</span>
+        <span><span class="brand-title">SAMARTH PLACEMENTS</span><br><span class="brand-subtitle">Recruitment &amp; Placement Management</span></span>
+      </a>
+      <p class="breadcrumb">Welcome back</p>
+      <h1 id="login-title">Sign in to your account</h1>
+      <p class="subtle small">Manage candidates, opportunities, and placements.</p>
+      <div class="form-grid">
+          <div class="field">
+            <label for="username">Username / Email <span class="required">*</span></label>
+            <input id="username" type="email" placeholder="recruiter@demo.com" value="recruiter@demo.com" required>
+          </div>
+          <div class="field">
+            <label for="password">Password <span class="required">*</span></label>
+            <input id="password" type="password" placeholder="Enter your password" value="demo1234" required>
+          </div>
+          <div class="field">
+            <label for="role">Role <span class="required">*</span></label>
+            <select id="role" required>
+              <option>Administrator</option><option selected>Recruiter</option><option>Placement Officer</option>
+            </select>
+          </div>
+          <div class="split-heading">
+            <label class="form-check"><input type="checkbox" checked> Remember me</label>
+            <a class="link small" href="login.html">Forgot password?</a>
+          </div>
+          <a class="button" href="dashboard.html">Sign in</a>
+        </div>
+      <div class="login-footnote">Authorized users only · Prototype demo credentials shown</div>
+      <p class="login-footer">Samarth Academy · Recruitment &amp; Placement Management System</p>
+    </section>
+  </main>
+</body>
+</html>

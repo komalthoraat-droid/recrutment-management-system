@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Add candidate | Samarth Placements</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell">
+<header class="topbar"><a class="brand" href="dashboard.html"><span class="brand-mark">S</span><span><span class="brand-title">SAMARTH PLACEMENTS</span><br><span class="brand-subtitle">Recruitment &amp; Placement Management</span></span></a><div class="top-actions"><a class="top-link" href="reports.html">Help &amp; support</a><div class="user-chip"><span class="avatar">AK</span><span class="user-copy"><span class="user-name">Amit Kulkarni</span><br><span class="user-role">Recruiter</span></span></div><a class="top-link" href="login.html">Log out</a></div></header>
+<div class="layout"><aside class="sidebar"><div class="nav-label">Workspace</div><nav>
+<a class="nav-link" href="dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a><a class="nav-link active" href="candidates.html"><span class="nav-icon">♙</span>Candidates</a><a class="nav-link" href="companies.html"><span class="nav-icon">▦</span>Companies</a><a class="nav-link" href="jobs.html"><span class="nav-icon">▤</span>Jobs</a><a class="nav-link" href="applications.html"><span class="nav-icon">▧</span>Applications</a><a class="nav-link" href="interviews.html"><span class="nav-icon">◷</span>Interviews</a><a class="nav-link" href="placement-process.html"><span class="nav-icon">✓</span>Placement Process</a><a class="nav-link" href="reports.html"><span class="nav-icon">▥</span>Reports</a>
+</nav></aside>
+<main class="main">
+<div class="page-heading"><div><h1>Add candidate</h1><div class="breadcrumb"><a class="link" href="candidates.html">Candidates</a> / New profile</div></div><div class="actions"><a class="button secondary" href="candidates.html">← Back to candidates</a></div></div>
+<div class="notice">Complete the required fields to create a candidate profile. Email and mobile should be unique.</div>
+<form action="candidates.html">
+<section class="panel"><div class="panel-head"><div><h2>Personal information</h2><span class="small subtle">Candidate contact and identity details</span></div></div><div class="form-grid">
+<div class="field"><label for="full-name">Full name <span class="required">*</span></label><input id="full-name" required placeholder="e.g. Rahul Patil"></div>
+<div class="field"><label for="email">Email address <span class="required">*</span></label><input id="email" type="email" required placeholder="name@example.com"><span class="help">Used for application and interview updates.</span></div>
+<div class="field"><label for="mobile">Mobile number <span class="required">*</span></label><input id="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" required placeholder="10-digit mobile number"><span class="help">Enter a 10-digit number without country code.</span></div>
+<div class="field"><label for="dob">Date of birth</label><input id="dob" type="date"></div>
+<div class="field"><label for="gender">Gender</label><select id="gender"><option value="">Select</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select></div>
+</div></section>
+<section class="panel"><div class="panel-head"><div><h2>Academic information</h2><span class="small subtle">Education details used for eligibility checks</span></div></div><div class="form-grid">
+<div class="field"><label for="qualification">Highest qualification <span class="required">*</span></label><select id="qualification" required><option value="">Select qualification</option><option>BE</option><option>BTech</option><option>MCA</option><option>BCA</option><option>BSc Computer Science</option><option>MSc Computer Science</option><option>Other</option></select></div>
+<div class="field"><label for="passing-year">Passing year <span class="required">*</span></label><select id="passing-year" required><option value="">Select year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select></div>
+<div class="field"><label for="college">College <span class="required">*</span></label><input id="college" required placeholder="College name"></div>
+<div class="field"><label for="university">University</label><input id="university" placeholder="University name"></div>
+<div class="field"><label for="percentage">Percentage / CGPA <span class="required">*</span></label><input id="percentage" type="number" min="0" max="100" step="0.01" required placeholder="e.g. 78.50"><span class="help">Enter percentage on a 0–100 scale.</span></div>
+<div class="field"><label for="backlogs">Active backlog count <span class="required">*</span></label><input id="backlogs" type="number" min="0" step="1" value="0" required></div>
+</div></section>
+<section class="panel"><div class="panel-head"><div><h2>Skills &amp; preferences</h2><span class="small subtle">Help match this candidate to relevant opportunities</span></div></div><div class="form-grid">
+<div class="field"><label for="technology">Primary technology <span class="required">*</span></label><select id="technology" required><option value="">Select technology</option><option>Java</option><option>Python</option><option>Testing</option><option>Data Analytics</option><option>Web Development</option></select></div>
+<div class="field"><label for="skill-level">Primary skill level</label><select id="skill-level"><option>Basic</option><option selected>Intermediate</option><option>Advanced</option></select></div>
+<div class="field full"><label for="skills">Secondary skills</label><input id="skills" placeholder="e.g. SQL, MySQL, HTML, CSS"><span class="help">Separate skills with commas.</span></div>
+<div class="field"><label for="current-location">Current location</label><input id="current-location" placeholder="City"></div>
+<div class="field"><label for="preferred-location">Preferred job location</label><input id="preferred-location" placeholder="City or region"></div>
+<div class="field"><label for="profile-status">Profile status <span class="required">*</span></label><select id="profile-status" required><option selected>ACTIVE</option><option>INACTIVE</option><option>ON_HOLD</option></select></div>
+</div><div class="form-actions"><a class="button secondary" href="candidates.html">Cancel</a><button class="button" type="submit">Save candidate</button></div></section>
+</form><p class="footer-note">Static HTML/CSS prototype · Saving does not persist data</p></main></div></div></body></html>
